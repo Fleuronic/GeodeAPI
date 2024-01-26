@@ -3,21 +3,56 @@
 import protocol Catenary.APIResponse
 
 public extension API {
-	struct Response: APIResponse {
-		private enum CodingKeys: String, CodingKey {
-			case results
-		}
-		
+	struct Response {
 		private let container: KeyedDecodingContainer<CodingKeys>
-		
-		// MARK: Response
-		public func resource<Resource: Decodable>() throws -> Resource {
-			try container.decode(Resource.self, forKey: .results)
+	}
+}
+// MARK -
+extension API.Response: APIResponse {
+			
+	// MARK: Response
+	public func resource<Resource: Decodable>() throws -> Resource {
+		switch try Status(container) {
+		case .success: try container.decode(Resource.self, forKey: .results)
+		case let .failure(error): throw error	
 		}
+	}
+	
+	// MARK: Decodable
+	public init(from decoder: Decoder) throws {
+		container = try decoder.container(keyedBy: CodingKeys.self)
+	}
+}
+
+// MARK -
+private extension API.Response {
+	enum CodingKeys: String, CodingKey {
+		case status
+		case results
+		case errorMessage
+	}
+	
+	enum Status {
+		case success
+		case failure(API.Error)
+	}
+}
+
+// MARK -
+private extension API.Response.Status {
+	init(_ container: KeyedDecodingContainer<API.Response.CodingKeys>) throws {
+		let value = try container.decode(String.self, forKey: .status)
 		
-		// MARK: Decodable
-		public init(from decoder: Decoder) throws {
-			container = try decoder.container(keyedBy: CodingKeys.self)
+		self = switch value {
+		case "OK": 
+			.success
+		default: 
+			.failure(
+				.init(
+					value: .init(rawValue: value)!,
+					message: try container.decode(String.self, forKey: .errorMessage)
+				)
+			)
 		}
 	}
 }
