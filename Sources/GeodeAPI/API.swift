@@ -2,8 +2,8 @@
 
 import InitMacro
 
-import struct Geode.Geocode
-import protocol Catenary.API
+import struct Foundation.URL
+import protocol Catenary.RESTAPI
 
 @Init public struct API {
 	private let apiKey: String
@@ -12,7 +12,7 @@ import protocol Catenary.API
 // MARK: -
 extension API: RESTAPI {
 	// MARK: API
-	public var baseURL: URL {
-		URL(string: "https://maps.googleapis.com/maps/api/geocode/json?key=\(apiKey)&")!
+	public func url(for path: String) -> URL {
+		URL(string: "https://maps.googleapis.com/maps/api/\(path)&key=\(apiKey)")!
 	}
 }
