@@ -15,7 +15,7 @@
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
-        "revision" : "41684bf76ab70b95e12fad5009ac5dbcd0de3226"
+        "revision" : "a3243b7c3ed403d3805998d2ec5c9e1008b888af"
       }
     },
     {
@@ -24,7 +24,7 @@
       "location" : "https://github.com/Fleuronic/Catenary",
       "state" : {
         "branch" : "main",
-        "revision" : "0937eb36eaf2551ccefe6916e308590b8163cc84"
+        "revision" : "9c38d7b6ba211b42a9fca1fa465a48a2d5c83d1f"
       }
     },
     {
@@ -60,7 +60,7 @@
       "location" : "https://github.com/Fleuronic/Geode",
       "state" : {
         "branch" : "main",
-        "revision" : "99ecc2304afce78a078a06c9c8a052c34184de9d"
+        "revision" : "4280aa5023f2fd39cdccd6310fa3ed887ca98ca0"
       }
     },
     {
@@ -69,7 +69,7 @@
       "location" : "https://github.com/Fleuronic/GeodeService",
       "state" : {
         "branch" : "main",
-        "revision" : "da5e5ab45ee72b4a13cb1cd0d6fe2b9d908ceb62"
+        "revision" : "5c095f7552fc89b42f8700a22330d848fc485b98"
       }
     },
     {
