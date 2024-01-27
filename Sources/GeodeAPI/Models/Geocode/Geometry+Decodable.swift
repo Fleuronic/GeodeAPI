@@ -12,7 +12,7 @@ extension Geocode.Geometry: Decodable {
 }
 
 // MARK -
-private extension Geocode {
+private extension Geocode.Geometry {
 	enum CodingKeys: String, CodingKey {
 		case location
 	}

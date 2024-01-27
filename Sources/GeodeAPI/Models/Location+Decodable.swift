@@ -12,7 +12,7 @@ extension Location: Decodable {
 }
 
 // MARK -
-private extension Geocode {
+private extension Location {
 	enum CodingKeys: String, CodingKey {
 		case latitude = "lat"
 		case longitude = "lng"

@@ -5,7 +5,8 @@ extension Geocode: Decodable {
 	public init(from decoder: Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
 		self.init(
-			formattedAddress: try container.decode(String.self, forKey: .formattedAddress)
+			formattedAddress: try container.decode(String.self, forKey: .formattedAddress),
+			geometry: try container.decode(Geometry.self, forKey: .geometry)
 		)
 	}
 }
@@ -14,5 +15,6 @@ extension Geocode: Decodable {
 private extension Geocode {
 	enum CodingKeys: String, CodingKey {
 		case formattedAddress
+		case geometry
 	}
 }
