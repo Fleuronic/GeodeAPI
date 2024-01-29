@@ -16,7 +16,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-		.package(path: "../../Submodules/GeodeService"),
+        .package(url: "https://github.com/Fleuronic/GeodeService", branch: "main"),
         .package(url: "https://github.com/Fleuronic/Caesura", branch: "main"),
     ],
     targets: [
