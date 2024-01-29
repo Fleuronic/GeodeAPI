@@ -60,16 +60,7 @@
       "location" : "https://github.com/Fleuronic/Geode",
       "state" : {
         "branch" : "main",
-        "revision" : "4280aa5023f2fd39cdccd6310fa3ed887ca98ca0"
-      }
-    },
-    {
-      "identity" : "geodeservice",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/GeodeService",
-      "state" : {
-        "branch" : "main",
-        "revision" : "5c095f7552fc89b42f8700a22330d848fc485b98"
+        "revision" : "69bb8d0545ef44752f00d143e3d02123b4430ab4"
       }
     },
     {
